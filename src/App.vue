@@ -1,18 +1,28 @@
 <template>
   <main class="flex-center">
     <section class="container">
-      <RadarChart />
+      <ChartBox :surveyData="surveyData" />
+      <TabBox :surveyData="surveyData" />
     </section>
   </main>
 </template>
 
 <script>
-import RadarChart from "./components/RadarChar.vue";
+import { surveyData } from "./data";
+import ChartBox from "./components/ChartBox.vue";
 
 export default {
   name: "App",
   components: {
-    RadarChart,
+    ChartBox,
+  },
+  data() {
+    return {
+      surveyData,
+    };
+  },
+  methods: {
+    setSearchResult() {},
   },
 };
 </script>
